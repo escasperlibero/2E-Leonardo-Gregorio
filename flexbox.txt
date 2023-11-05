@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Elemento Móvel com Flexbox</title>
+</head>
+<body>
+    <div class="container">
+        <div class="movel" id="movel">Arraste-me!</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+**CSS (`estilo.css`):**
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.movel {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    cursor: move;
+    user-drag: none;
+}
+```
+
+**JavaScript (`script.js`):**
+```javascript
+const movel = document.getElementById("movel");
+
+let offsetX, offsetY;
+let isDragging = false;
+
+movel.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - movel.getBoundingClientRect().left;
+    offsetY = e.clientY - movel.getBoundingClientRect().top;
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+    movel.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+});
+```
