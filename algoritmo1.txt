@@ -1,0 +1,36 @@
+function insertionSort(vetor) {
+  const tamanho = vetor.length;
+
+  for (let i = 1; i < tamanho; i++) {
+    let valorAtual = vetor[i];
+    let j = i - 1;
+
+    while (j >= 0 && vetor[j] > valorAtual) {
+      vetor[j + 1] = vetor[j];
+      j = j - 1;
+    }
+
+    vetor[j + 1] = valorAtual;
+  }
+
+  return vetor;
+}
+
+// Gerar vetor com números ímpares
+const vetor = [];
+const tamanhoVetor = 30;
+
+for (let i = 1; i <= tamanhoVetor * 2; i += 2) {
+  vetor.push(i);
+}
+
+// Embaralhar vetor (opcional)
+for (let i = tamanhoVetor - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [vetor[i], vetor[j]] = [vetor[j], vetor[i]];
+}
+
+console.log("Vetor desordenado:", vetor);
+
+const vetorOrdenado = insertionSort(vetor.slice()); // Criar uma cópia do vetor para não modificar o original
+console.log("Vetor ordenado:", vetorOrdenado);
