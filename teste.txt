@@ -1,0 +1,49 @@
+Vamos criar uma nova pasta chamada `utils` dentro do diretório `src` e adicionar um arquivo JavaScript chamado `mensagem.js` com uma função que retorna uma mensagem simples. Certifique-se de que o servidor de desenvolvimento esteja em execução (`npm start`) para visualizar as alterações.
+
+A seguir estão as etapas:
+
+### 1. Criar a nova pasta e o arquivo JavaScript
+
+Dentro do diretório `src`, crie uma pasta chamada `utils`. Dentro dessa pasta, crie um arquivo chamado `mensagem.js` com o seguinte conteúdo:
+
+```javascript
+// src/utils/mensagem.js
+const obterMensagem = () => {
+  return 'Bem-vindo ao meu aplicativo React!';
+};
+
+export default obterMensagem;
+```
+
+### 2. Importar e usar a função no `App.js`
+
+Agora, no arquivo `App.js` dentro do diretório `src`, importe a função `obterMensagem` e use-a para exibir a mensagem.
+
+```jsx
+// src/App.js
+import React from 'react';
+import './App.css';
+import obterMensagem from './utils/mensagem';
+
+function App() {
+  const mensagem = obterMensagem();
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>
+          {mensagem}
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 3. Visualizar o Resultado
+
+Após salvar essas alterações, o servidor de desenvolvimento recarregará automaticamente o aplicativo, e você verá a nova mensagem ao acessar [http://localhost:3000](http://localhost:3000).
+
+Lembre-se de anexar os arquivos modificados (mensagem.js e App.js) como evidência na atividade.
