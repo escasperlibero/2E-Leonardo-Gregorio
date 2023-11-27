@@ -1,0 +1,57 @@
+
+Aqui estão as etapas:
+
+### 1. Criar o componente Contador.js
+
+Dentro do diretório `src`, crie um novo arquivo chamado `Contador.js` com o seguinte conteúdo:
+
+```jsx
+// src/Contador.js
+import React, { useState } from 'react';
+
+const Contador = () => {
+  const [contador, setContador] = useState(0);
+
+  const incrementarContador = () => {
+    setContador(contador + 1);
+  };
+
+  return (
+    <div>
+      <p>Contador: {contador}</p>
+      <button onClick={incrementarContador}>Incrementar</button>
+    </div>
+  );
+};
+
+export default Contador;
+```
+
+### 2. Usar o componente Contador no App.js
+
+Agora, vamos importar e usar o componente `Contador` no arquivo `App.js`:
+
+```jsx
+// src/App.js
+import React from 'react';
+import './App.css';
+import Contador from './Contador';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <Contador />
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 3. Visualizar o Resultado
+
+Após salvar essas alterações, o servidor de desenvolvimento recarregará automaticamente o aplicativo, e você verá o contador e o botão para incrementar o valor.
+
+Lembre-se de anexar os arquivos modificados (Contador.js e App.js) como evidência na atividade.
