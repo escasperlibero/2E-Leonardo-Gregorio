@@ -1,0 +1,98 @@
+
+```bash
+npm install react-router-dom
+```
+
+A seguir, vou mostrar como criar um componente com roteamento entre duas telas (páginas). Vamos criar duas páginas simples, uma para a página inicial e outra para uma página chamada "Sobre".
+
+### 1. Criar os componentes das páginas
+
+Dentro do diretório `src`, crie dois novos arquivos:
+
+**PaginaInicial.js:**
+
+```jsx
+// src/PaginaInicial.js
+import React from 'react';
+
+const PaginaInicial = () => {
+  return (
+    <div>
+      <h2>Página Inicial</h2>
+      <p>Conteúdo da página inicial...</p>
+    </div>
+  );
+};
+
+export default PaginaInicial;
+```
+
+**PaginaSobre.js:**
+
+```jsx
+// src/PaginaSobre.js
+import React from 'react';
+
+const PaginaSobre = () => {
+  return (
+    <div>
+      <h2>Sobre Nós</h2>
+      <p>Informações sobre nossa aplicação...</p>
+    </div>
+  );
+};
+
+export default PaginaSobre;
+```
+
+### 2. Criar o componente com roteamento
+
+**App.js:**
+
+```jsx
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import PaginaInicial from './PaginaInicial';
+import PaginaSobre from './PaginaSobre';
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Página Inicial</Link>
+              </li>
+              <li>
+                <Link to="/sobre">Sobre</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/sobre">
+              <PaginaSobre />
+            </Route>
+            <Route path="/">
+              <PaginaInicial />
+            </Route>
+          </Switch>
+        </header>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+Neste exemplo, o componente `App` renderiza um menu de navegação com dois links (`Página Inicial` e `Sobre`). O roteamento é gerenciado pelo `react-router-dom`, e as páginas são exibidas com base nos caminhos fornecidos.
+
+### 3. Visualizar o Resultado
+
+Após salvar essas alterações, o servidor de desenvolvimento recarregará automaticamente o aplicativo, e você poderá navegar entre as páginas usando os links.
+
+Lembre-se de anexar os arquivos modificados (PaginaInicial.js, PaginaSobre.js e App.js) como evidência na atividade.
