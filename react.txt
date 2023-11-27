@@ -1,0 +1,43 @@
+Desenvolver um programa React envolve alguns passos, desde a instalação até a execução. Vamos seguir um guia básico. Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
+
+### Passo 1: Instalar o Node.js e o npm
+
+Se você ainda não tiver o Node.js instalado, faça o download e a instalação a partir do [site oficial](https://nodejs.org/). O npm (Node Package Manager) é incluído na instalação por padrão.
+
+### Passo 2: Criar um Novo Aplicativo React
+
+Abra o terminal e execute o seguinte comando para criar um novo aplicativo React:
+
+```bash
+npx create-react-app meu-app
+```
+
+Substitua "meu-app" pelo nome desejado para o seu aplicativo.
+
+### Passo 3: Navegar para o Diretório do Aplicativo
+
+```bash
+cd meu-app
+```
+
+### Passo 4: Executar o Aplicativo React
+
+```bash
+npm start
+```
+
+Este comando iniciará o servidor de desenvolvimento e abrirá automaticamente o aplicativo no seu navegador padrão. Se não abrir automaticamente, acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+### Passo 5: Editar o Código
+
+Abra o diretório do seu aplicativo no seu editor de código preferido (por exemplo, Visual Studio Code) e faça as alterações desejadas nos arquivos dentro da pasta "src".
+
+### Passo 6: Salvar e Visualizar Alterações
+
+Ao salvar as alterações nos arquivos, o servidor de desenvolvimento recarregará automaticamente o aplicativo, e você poderá ver as alterações no navegador.
+
+### Passo 7: Parar o Servidor de Desenvolvimento
+
+Quando terminar, vá para o terminal e pressione `Ctrl + C` para interromper o servidor de desenvolvimento.
+
+Lembre-se de que este é um guia básico, e há muitas outras coisas que você pode fazer com o React, como instalar dependências adicionais, criar componentes, gerenciar estado e muito mais. Consulte a documentação oficial do [React](https://reactjs.org/) para obter informações mais detalhadas e avançadas.
